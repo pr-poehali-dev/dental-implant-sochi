@@ -77,47 +77,210 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <Card className="border-2 border-primary/20 bg-white shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                    <Icon name="CreditCard" className="text-secondary" size={28} />
+                  </div>
+                  <h3 className="text-3xl font-bold">Рассрочка на 24 месяца</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-secondary flex-shrink-0" size={24} />
+                    <p className="text-lg">Без процентов и переплат</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-secondary flex-shrink-0" size={24} />
+                    <p className="text-lg">Без первого взноса</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Check" className="text-secondary flex-shrink-0" size={24} />
+                    <p className="text-lg">Лечите сейчас, платите потом</p>
+                  </div>
+                </div>
+                <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl">
+                  <p className="text-5xl font-bold text-primary mb-2">25 000 ₽</p>
+                  <p className="text-muted-foreground text-lg">в месяц</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-secondary/20 bg-white shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon name="Gift" className="text-primary" size={28} />
+                  </div>
+                  <h3 className="text-3xl font-bold">В подарок от клиники</h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    "Консультация имплантолога",
+                    "План лечения",
+                    "КТ-снимок при лечении",
+                    "Плановые осмотры дважды в год",
+                    "Общий анализ крови"
+                  ].map((gift, idx) => (
+                    <div key={idx} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                      <p className="font-medium">{gift}</p>
+                      <span className="text-2xl font-bold text-primary">0₽</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button onClick={scrollToContact} size="lg" className="text-xl px-12 h-16 shadow-lg">
+              Получить расчёт стоимости + подарки
+            </Button>
+            <p className="text-muted-foreground mt-4">или позвоните, чтобы задать любой вопрос</p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
-            Наши гарантии
+            Восстановление зубов по уникальной технологии
+          </h2>
+          <p className="text-center text-primary text-2xl font-semibold mb-12">
+            «Всё за один день»
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: "Zap",
+                title: "Скорость",
+                description: "Вся процедура занимает один день. Утром — визит в клинику, вечером — вы с новой улыбкой."
+              },
+              {
+                icon: "Sparkles",
+                title: "Комфорт и эстетика",
+                description: "Зубы ощущаются естественно, без дискомфорта, и выглядят безупречно."
+              },
+              {
+                icon: "Utensils",
+                title: "Функциональность",
+                description: "Сразу после процедуры вы можете вернуться к привычному питанию без ограничений."
+              },
+              {
+                icon: "ShieldCheck",
+                title: "Надёжность",
+                description: "Доказанная за 30 лет приживаемость имплантов — 99,8%."
+              },
+              {
+                icon: "DollarSign",
+                title: "Доступность",
+                description: "Стоимость в 2 раза ниже классической имплантации благодаря фиксации на четырёх имплантах."
+              },
+              {
+                icon: "HeartPulse",
+                title: "Безопасность",
+                description: "Метод подходит пожилым людям и пациентам с сахарным диабетом."
+              },
+              {
+                icon: "BadgeCheck",
+                title: "Гарантия",
+                description: "Мы предоставляем тройную гарантию: на импланты, протез и выполненную работу."
+              }
+            ].map((item, index) => (
+              <Card key={index} className="border-2 hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon as any} className="text-secondary" size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-2xl font-bold text-foreground">
+              Верните себе здоровые зубы и уверенность в себе — раз и навсегда!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
+            Тройная гарантия качества
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
             Мы берём на себя полную ответственность за результат
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                icon: "Shield",
-                title: "Пожизненная гарантия",
-                description: "На импланты премиум-класса от ведущих производителей"
+                icon: "FileText",
+                title: "Гарантия на протез",
+                description: "Протез производится в собственной зуботехнической лаборатории по авторским наработкам"
               },
               {
-                icon: "Clock",
-                title: "Всё за 1 день",
-                description: "Полное восстановление зубного ряда за одно посещение"
+                icon: "Pill",
+                title: "Гарантия на импланты",
+                description: "Мы используем в работе только сертифицированные оригинальные импланты PALTOP США"
               },
               {
                 icon: "Award",
-                title: "Сертификация",
-                description: "Все врачи имеют международные сертификаты"
-              },
-              {
-                icon: "FileCheck",
-                title: "Договор",
-                description: "Официальный договор с полным описанием гарантий"
+                title: "Гарантия на работу",
+                description: "Наша клиника имеет все необходимые лицензии и сертификаты качества"
               }
             ].map((item, index) => (
-              <Card key={index} className="hover-scale border-2 hover:border-primary transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name={item.icon as any} className="text-primary" size={32} />
+              <Card key={index} className="border-2 border-primary/20 hover:border-primary transition-all duration-300 shadow-lg">
+                <CardContent className="p-8 text-center">
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Icon name={item.icon as any} className="text-primary" size={40} />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-12">
+            Что входит в стоимость услуги
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              "Осмотр и консультация врача стоматолога",
+              "Составление плана лечения",
+              "3D планирование операции",
+              "Изготовление хирургического шаблона (дополнительно)",
+              "4 Имплантата PALTOP США",
+              "Операция по установке 4-х имплантатов",
+              "Установка 4-х MULTI UNIT",
+              "Установка формирователя (по показаниям)",
+              "Рентген контроль",
+              "Фото протокол",
+              "Изготовление и установка адаптационного протеза",
+              "Рекомендации"
+            ].map((item, index) => (
+              <div key={index} className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+                <Icon name="CheckCircle" className="text-secondary flex-shrink-0 mt-1" size={24} />
+                <p className="text-lg">{item}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -126,56 +289,101 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-b from-white to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
-            Преимущества системы All-on-4
+            Импланты PALTOP США
           </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Почему тысячи пациентов выбирают именно эту технологию
+          <p className="text-center text-primary text-2xl font-semibold mb-12">
+            Премиальное качество по специальной цене
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
-                icon: "Zap",
-                title: "Быстрый результат",
-                description: "Полное восстановление улыбки всего за 1 день. Приходите утром без зубов, уходите вечером с красивой улыбкой."
-              },
-              {
-                icon: "DollarSign",
-                title: "Экономия бюджета",
-                description: "Всего 4 импланта вместо 6-8. Экономия до 40% по сравнению с классической имплантацией."
-              },
-              {
-                icon: "Heart",
-                title: "Без костной пластики",
-                description: "Импланты устанавливаются под углом, что позволяет обойти участки с недостатком костной ткани."
-              },
-              {
-                icon: "Sparkles",
-                title: "Эстетика",
-                description: "Натуральный вид и естественная улыбка. Никто не заметит разницы с настоящими зубами."
+                icon: "Award",
+                title: "Проверенный бренд",
+                description: "Лидер среди имплантов, сертификация FDA"
               },
               {
                 icon: "Activity",
-                title: "Жевать сразу",
-                description: "Временный протез устанавливается в день операции. Можно есть мягкую пищу уже через 2-3 часа."
+                title: "Быстрая приживаемость",
+                description: "Биосовместимые материалы снижают риск отторжения"
               },
               {
-                icon: "CheckCircle",
-                title: "Высокая приживаемость",
-                description: "98% успешных операций благодаря современным технологиям и опыту наших врачей."
+                icon: "Infinity",
+                title: "Пожизненная гарантия",
+                description: "От производителя при соблюдении рекомендаций"
+              },
+              {
+                icon: "Smile",
+                title: "Естественный вид",
+                description: "Идеальная эстетика и комфорт"
+              },
+              {
+                icon: "Clock",
+                title: "Минимальный период реабилитации",
+                description: "Быстрое восстановление"
               }
             ].map((item, index) => (
-              <div key={index} className="flex gap-4 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                    <Icon name={item.icon as any} className="text-secondary" size={24} />
+              <Card key={index} className="border-2 hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name={item.icon as any} className="text-primary" size={28} />
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-12">
+            Почему стоит обратиться к нам
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                icon: "Users",
+                title: "Опытные специалисты",
+                description: "Имплантологи с 17+ лет практики"
+              },
+              {
+                icon: "MonitorCheck",
+                title: "Современное оборудование",
+                description: "КТ - цифровая диагностика, 3D-сканирование, планирование и малотравматичная установка"
+              },
+              {
+                icon: "Shield",
+                title: "Пожизненная гарантия на работу",
+                description: "Полная ответственность за результат лечения"
+              },
+              {
+                icon: "UserCheck",
+                title: "Индивидуальный подход",
+                description: "Подбираем решение под ваш бюджет и анатомию"
+              },
+              {
+                icon: "Heart",
+                title: "Комфорт и безопасность",
+                description: "Безболезненное лечение и качественная анестезия"
+              }
+            ].map((item, index) => (
+              <Card key={index} className="border-2 hover:border-secondary transition-all duration-300 shadow-md">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon as any} className="text-secondary" size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
