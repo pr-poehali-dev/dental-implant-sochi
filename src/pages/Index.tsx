@@ -449,6 +449,136 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-b from-white to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
+            Кейсы наших работ
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
+            Реальные результаты наших пациентов. До и После имплантации All-on-4
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Мария, 52 года",
+                problem: "Полная адентия верхней челюсти",
+                result: "Установка All-on-4, временный протез в день операции",
+                time: "1 день",
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/16a5775e-68f6-4d86-a3eb-7969a525df0f.jpg"
+              },
+              {
+                name: "Александр, 48 лет",
+                problem: "Множественное отсутствие зубов",
+                result: "Имплантация All-on-4 на обе челюсти",
+                time: "1 день",
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/16a5775e-68f6-4d86-a3eb-7969a525df0f.jpg"
+              },
+              {
+                name: "Елена, 55 лет",
+                problem: "Атрофия костной ткани",
+                result: "All-on-4 без костной пластики",
+                time: "1 день",
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/16a5775e-68f6-4d86-a3eb-7969a525df0f.jpg"
+              }
+            ].map((caseItem, index) => (
+              <Card key={index} className="overflow-hidden hover-scale border-2 hover:border-primary transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={caseItem.image} 
+                    alt={`Кейс ${caseItem.name}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3">{caseItem.name}</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start gap-2">
+                      <Icon name="AlertCircle" className="text-muted-foreground flex-shrink-0 mt-0.5" size={16} />
+                      <p className="text-muted-foreground"><span className="font-semibold">Проблема:</span> {caseItem.problem}</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="CheckCircle" className="text-secondary flex-shrink-0 mt-0.5" size={16} />
+                      <p className="text-muted-foreground"><span className="font-semibold">Решение:</span> {caseItem.result}</p>
+                    </div>
+                    <div className="flex items-center gap-2 pt-2">
+                      <Icon name="Clock" className="text-primary" size={16} />
+                      <p className="text-primary font-semibold">{caseItem.time}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
+            Отзывы пациентов
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
+            Что говорят наши пациенты о результатах лечения
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Ольга Викторовна",
+                age: "54 года",
+                review: "Долго не решалась на имплантацию, боялась боли и долгого восстановления. Но технология All-on-4 превзошла все ожидания! Утром пришла без зубов, вечером ушла с красивой улыбкой. Совершенно безболезненно благодаря качественной анестезии. Спасибо докторам за профессионализм и чуткое отношение!",
+                rating: 5,
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/85341f3f-9229-4687-994d-b42a5991490b.jpg"
+              },
+              {
+                name: "Михаил Петрович",
+                age: "47 лет",
+                review: "Потерял несколько зубов из-за пародонтита. Врачи предложили All-on-4 и я не пожалел! Всё сделали за один день, импланты PALTOP прижились отлично. Сейчас ем всё что хочу, улыбаюсь без стеснения. Рассрочка на 24 месяца очень помогла. Рекомендую всем!",
+                rating: 5,
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/cebca702-72f8-40b0-bcbe-1bfabf7c8d20.jpg"
+              },
+              {
+                name: "Светлана Александровна",
+                age: "51 год",
+                review: "Мне сказали что нужна костная пластика, но в этой клинике провели All-on-4 без неё! Операция прошла быстро, никаких осложнений. Уже через неделю забыла что у меня импланты. Врачи - настоящие профессионалы своего дела. Цена полностью оправдана качеством!",
+                rating: 5,
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/85341f3f-9229-4687-994d-b42a5991490b.jpg"
+              },
+              {
+                name: "Андрей Николаевич",
+                age: "56 лет",
+                review: "Обратился в клинику по рекомендации друга. Всё на высшем уровне: современное оборудование, внимательные врачи, качественные материалы. Имплантация All-on-4 заняла несколько часов, но результат того стоил. Прошло полгода - всё отлично! Пожизненная гарантия даёт уверенность.",
+                rating: 5,
+                image: "https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/cebca702-72f8-40b0-bcbe-1bfabf7c8d20.jpg"
+              }
+            ].map((testimonial, index) => (
+              <Card key={index} className="border-2 hover:border-secondary transition-all duration-300 shadow-md">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-1">{testimonial.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{testimonial.age}</p>
+                      <div className="flex gap-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={16} />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed italic">"{testimonial.review}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
             Наши специалисты
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
