@@ -576,6 +576,75 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-primary to-primary/90 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-30"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Восстановите зубы один раз и навсегда - по лучшей цене
+              </h2>
+              <p className="text-lg mb-8 text-white/90 leading-relaxed">
+                Имплантация All-on-4 с использованием премиум-имплантов PALTOP. Временный протез в день операции. Пожизненная гарантия на работу.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Icon name="CheckCircle" className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Всё за 1 день</p>
+                    <p className="text-sm text-white/80">От диагностики до зубов</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Icon name="Shield" className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Гарантия</p>
+                    <p className="text-sm text-white/80">Пожизненная на работу</p>
+                  </div>
+                </div>
+              </div>
+              
+              <Button 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 h-auto font-bold shadow-xl"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Записаться на консультацию
+                <Icon name="ArrowRight" className="ml-2" size={20} />
+              </Button>
+              
+              <p className="text-sm text-white/80 mt-4">
+                Консультация и диагностика абсолютно бесплатны
+              </p>
+            </div>
+            
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                <img 
+                  src="https://cdn.poehali.dev/projects/c5819684-fe04-4cbc-b4ad-76ac9181a468/files/a3a239d0-9545-4945-b70a-924867327a55.jpg"
+                  alt="Восстановление зубов All-on-4"
+                  className="w-full h-auto"
+                />
+              </div>
+              
+              <div className="absolute -bottom-6 -right-6 bg-secondary text-white p-6 rounded-xl shadow-2xl">
+                <div className="text-center">
+                  <p className="text-sm font-semibold mb-1">От</p>
+                  <p className="text-3xl font-bold">179 000 ₽</p>
+                  <p className="text-xs mt-1 opacity-90">за одну челюсть</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-gradient-to-b from-white to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
